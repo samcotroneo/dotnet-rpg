@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using dotnet_rpg.Services;
 using dotnet_rpg.Services.CharacterService;
 using Microsoft.AspNetCore.Builder;
@@ -28,6 +29,7 @@ namespace dotnet_rpg
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<ICharacterService, CharacterService>(); // Use the character service class whenever ICharacterService is used.
             //services.AddScoped(); Creates a new isntance of the service for every request that comes in.
             //services.AddTransient(); Provides a new instance to every controller, and every service.
