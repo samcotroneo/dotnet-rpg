@@ -7,12 +7,15 @@ namespace dotnet_rpg.Data
     // Combination of the Unity of Work, and Repository Patterns.
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) 
+        public DataContext(DbContextOptions<DataContext> options)
         : base(options)
         {
 
         }
 
         public DbSet<Character> Characters { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
     }
 }

@@ -34,6 +34,7 @@ namespace dotnet_rpg
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<ICharacterService, CharacterService>(); // Use the character service class whenever ICharacterService is used.
+            services.AddScoped<IAuthRepository, AuthRepository>();
             //services.AddScoped(); Creates a new isntance of the service for every request that comes in.
             //services.AddTransient(); Provides a new instance to every controller, and every service.
             //services.AddSingleton(); Creates and then uses a single instance of the service for all requests.
